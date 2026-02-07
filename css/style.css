@@ -1,0 +1,256 @@
+/* ========================================
+   IronsCreative Portfolio - Custom Styles
+   ======================================== */
+
+:root {
+    --color-purple: #7C3AED;
+    --color-dark: #0B0B0E;
+    --color-surface: #121217;
+    --transition: all 0.3s ease-in-out;
+}
+
+/* ========================================
+   Navigation Styles
+   ======================================== */
+nav {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav:hover {
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.1);
+}
+
+/* Mobile Menu Animation */
+#mobileMenu {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    nav .max-w-7xl {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+/* ========================================
+   Hover Effects
+   ======================================== */
+a[href^="#"] {
+    position: relative;
+}
+
+a[href^="#"]:not([class*="px"]):not([class*="bg-"]):not([class*="border"]) {
+    text-decoration: none;
+}
+
+a[href^="#"]:not([class*="px"]):not([class*="bg-"]):not([class*="border"])::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-purple);
+    transition: width var(--transition);
+}
+
+a[href^="#"]:not([class*="px"]):not([class*="bg-"]):not([class*="border"]):hover::after {
+    width: 100%;
+}
+
+/* ========================================
+   Card Hover Effects
+   ======================================== */
+.bg-dark-surface {
+    transition: var(--transition);
+}
+
+.group {
+    position: relative;
+}
+
+/* ========================================
+   Button Styles
+   ======================================== */
+button {
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* ========================================
+   Smooth Scrolling
+   ======================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ========================================
+   Responsive Typography
+   ======================================== */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2.25rem !important;
+    }
+    
+    h2 {
+        font-size: 1.875rem !important;
+    }
+    
+    h3 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* ========================================
+   Animation Classes
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s ease-out;
+}
+
+/* ========================================
+   Focus States untuk Accessibility
+   ======================================== */
+a:focus,
+button:focus {
+    outline: 2px solid var(--color-purple);
+    outline-offset: 2px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+/* ========================================
+   Scrollbar Styling (Optional)
+   ======================================== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-purple);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6d28d9;
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+    nav {
+        display: none;
+    }
+    
+    .no-print {
+        display: none;
+    }
+}
