@@ -1,4 +1,5 @@
-function initMobileMenu() {
+
+ function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const menuIcon = document.getElementById('menuIcon');
@@ -56,6 +57,11 @@ function initServiceCarousel() {
 
     const updateServiceDisplay = () => {
         serviceCards.forEach((card, index) => {
+            if (window.innerWidth < 768) { // On mobile, show all cards
+                card.classList.remove('hidden');
+                card.classList.add('block');
+                return;
+            }
             if (index === currentService) {
                 card.classList.remove('hidden');
                 card.classList.add('block');
@@ -103,8 +109,9 @@ function initServiceCarousel() {
         if (e.key === 'ArrowLeft') prevService();
     });
 
-    // Initial display
+    // Initial display & on resize
     updateServiceDisplay();
+    window.addEventListener('resize', updateServiceDisplay);
 }
 
 // ===================================
@@ -119,7 +126,7 @@ function initTestimonialCarousel() {
     const updateTestimonialDisplay = () => {
         testimonialItems.forEach((item, index) => {
             if (index === currentTestimonial) {
-                item.style.display = 'block';
+                item.style.display = 'flex'; // Changed from 'block' to 'flex'
                 setTimeout(() => {
                     item.style.opacity = '1';
                 }, 10);
@@ -163,7 +170,8 @@ function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
             
             if (target) {
                 const offsetTop = target.offsetTop - 80; // Account for fixed navbar
@@ -171,6 +179,13 @@ function initSmoothScroll() {
                     top: offsetTop,
                     behavior: 'smooth'
                 });
+                
+                // Manually update URL hash
+                if (history.pushState) {
+                    history.pushState(null, null, targetId);
+                } else {
+                    window.location.hash = targetId;
+                }
             }
         });
     });
@@ -180,12 +195,13 @@ function initSmoothScroll() {
 // 5. ACTIVE NAV LINK
 // ===================================
 function initActiveNavLink() {
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]:not(.px-6)'); // Exclude buttons
+    const sections = document.querySelectorAll('section[id]');
     
     window.addEventListener('scroll', () => {
         let current = '';
         
-        document.querySelectorAll('[id]').forEach(section => {
+        sections.forEach(section => {
             const sectionTop = section.offsetTop - 100;
             if (pageYOffset >= sectionTop) {
                 current = section.getAttribute('id');
@@ -193,16 +209,19 @@ function initActiveNavLink() {
         });
 
         navLinks.forEach(link => {
-            link.classList.remove('text-white', 'border-b', 'border-purple-accent');
+            link.classList.remove('text-white');
             link.classList.add('text-gray-400');
+            link.parentElement.classList.remove('active-link-style');
             
             if (link.getAttribute('href') === `#${current}`) {
                 link.classList.remove('text-gray-400');
-                link.classList.add('text-white', 'border-b', 'border-purple-accent');
+                link.classList.add('text-white');
+                link.parentElement.classList.add('active-link-style');
             }
         });
     });
 }
+
 
 // ===================================
 // 6. LUCIDE ICONS INITIALIZATION
@@ -226,15 +245,18 @@ function initFormHandling() {
         const nameInput = this.querySelector('input[type="text"]');
         const emailInput = this.querySelector('input[type="email"]');
         const messageInput = this.querySelector('textarea');
+        const submitBtn = this.querySelector('button[type="submit"]');
         
         // Validate
         if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
-            alert('Please fill all fields');
+            submitBtn.textContent = 'Please fill all fields';
+            setTimeout(() => {
+              submitBtn.textContent = 'Kirim Pesan';
+            }, 2000)
             return;
         }
         
         // Show success message
-        const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.textContent = '✓ Message Sent!';
         submitBtn.disabled = true;
@@ -244,30 +266,31 @@ function initFormHandling() {
             this.reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-        }, 2000);
+        }, 3000);
     });
 }
 
 // ===================================
-// 8. SCROLL REVEAL ANIMATIONS (BONUS)
+// 8. SCROLL REVEAL ANIMATIONS
 // ===================================
 function initScrollReveal() {
+    const revealElements = document.querySelectorAll('[data-animate]');
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                entry.target.classList.add('animate-fade-in-up');
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Observe service cards, project cards, testimonials
-    document.querySelectorAll('[data-animate]').forEach(el => {
+    revealElements.forEach(el => {
         observer.observe(el);
     });
 }
