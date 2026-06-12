@@ -37,15 +37,13 @@
 </head>
 <body class="overflow-x-hidden">
 
-
     <nav class="fixed top-0 w-full z-50 bg-[#0B0B0E]/95 backdrop-blur-md border-b border-white/5 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
             <div class="text-xl font-bold tracking-tighter flex-shrink-0" data-animate>
                 RFX<span class="text-purple-accent">Creative</span>
             </div>
 
-            <div class="hidden md:flex items-center space-x-10 text-sm font-medium text-gray-400" data-animate>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400" data-animate>
                 <a href="#home" class="hover:text-white transition-colors duration-200">Beranda</a>
                 <a href="#about" class="hover:text-white transition-colors duration-200">Tentang</a>
                 <a href="#services" class="hover:text-white transition-colors duration-200">Layanan</a>
@@ -54,7 +52,6 @@
                 <a href="#contact" class="px-6 py-2 border border-purple-accent text-purple-accent rounded-lg hover:bg-purple-accent hover:text-white transition-all duration-200">Hubungi Saya</a>
             </div>
 
-            <!-- Menu Toggle -->
             <button id="mobileMenuBtn" class="md:hidden text-gray-400 hover:text-white transition-colors duration-200 focus:outline-none">
                 <svg id="menuIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -65,28 +62,26 @@
             </button>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-[#0B0B0E]/98 backdrop-blur-md border-b border-white/5 px-6 py-4 animate-in slide-in-from-top duration-300">
-            <div class="space-y-4">
-                <a href="#home" class="block text-gray-400 hover:text-white transition-colors duration-200 py-2 text-sm">Beranda</a>
-                <a href="#about" class="block text-gray-400 hover:text-white transition-colors duration-200 py-2 text-sm">Tentang</a>
-                <a href="#services" class="block text-gray-400 hover:text-white transition-colors duration-200 py-2 text-sm">Layanan</a>
-                <a href="#projects" class="block text-gray-400 hover:text-white transition-colors duration-200 py-2 text-sm">Proyek</a>
-                <a href="#contact" class="block text-gray-400 hover:text-white transition-colors duration-200 py-2 text-sm">Kontak</a>
-                <a href="#contact" class="block w-full px-4 py-2 border border-purple-accent text-purple-accent rounded-lg hover:bg-purple-accent hover:text-white transition-all duration-200 text-center text-sm font-medium mt-4">Hubungi Saya</a>
+        <div id="mobileMenu" class="hidden md:hidden bg-[#0B0B0E]/98 backdrop-blur-md border-t border-white/5 px-4 py-4">
+            <div class="space-y-2">
+                <a href="#home" class="block text-gray-400 hover:text-white transition-colors duration-200 py-2 text-base">Beranda</a>
+                <a href="#about" class="block text-gray-400 hover:text-white transition-colors duration-200 py-2 text-base">Tentang</a>
+                <a href="#services" class="block text-gray-400 hover:text-white transition-colors duration-200 py-2 text-base">Layanan</a>
+                <a href="#projects" class="block text-gray-400 hover:text-white transition-colors duration-200 py-2 text-base">Proyek</a>
+                <a href="#contact" class="block text-gray-400 hover:text-white transition-colors duration-200 py-2 text-base">Kontak</a>
+                <a href="#contact" class="block w-full px-4 py-3 border border-purple-accent text-purple-accent rounded-lg hover:bg-purple-accent hover:text-white transition-all duration-200 text-center text-base font-medium mt-4">Hubungi Saya</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-40 pb-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section id="home" class="pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-20 px-4 sm:px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div data-animate>
-            <h4 class="text-lg font-medium text-gray-300 mb-2">Halo Semua</h4>
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+            <h4 class="text-base sm:text-lg font-medium text-gray-300 mb-2">Halo Semua</h4>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
                 Saya <span class="text-purple-accent">Custom Name</span>
             </h1>
-            <h3 class="text-xl text-gray-400 font-medium mb-6">Peminat Desain UI/UX</h3>
-            <p class="text-gray-500 leading-relaxed mb-10 max-w-lg">
+            <h3 class="text-lg sm:text-xl text-gray-400 font-medium mb-6">Peminat Desain UI/UX</h3>
+            <p class="text-gray-400 sm:text-gray-500 leading-relaxed mb-8 sm:mb-10 max-w-lg">
                 Seorang desainer yang berfokus pada pengalaman pengguna dan antarmuka visual yang modern. Saya senang menciptakan solusi desain yang bersih, fungsional, dan berorientasi pada kebutuhan klien.
             </p>
             <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
@@ -95,8 +90,7 @@
                 </button>
                 <a href="#contact" class="font-semibold border-b border-white/20 pb-1 hover:border-purple-accent transition-all whitespace-nowrap">Hubungi Saya</a>
             </div>
-            <!-- Social Media -->
-            <div class="mt-12 flex items-center space-x-4 flex-wrap">
+            <div class="mt-10 sm:mt-12 flex items-center space-x-4 flex-wrap">
                 <span class="text-sm text-gray-500 mr-2">Temukan Saya di:</span>
                 <div class="flex space-x-4">
                     <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-accent transition-all"><i data-lucide="facebook" class="w-4 h-4"></i></a>
@@ -107,24 +101,19 @@
             </div>
         </div>
         <div class="relative flex justify-center md:justify-end" data-animate>
-            <div class="relative w-80 h-96 md:w-96 md:h-[500px] z-10">
-                <!-- Background Shape -->
-                <div class="absolute -bottom-10 -right-10 w-full h-full bg-purple-accent/20 rounded-3xl -z-10 transform rotate-6"></div>
-                <!-- Profile Image -->
+            <div class="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[500px] z-10">
+                <div class="absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 w-full h-full bg-purple-accent/20 rounded-3xl -z-10 transform rotate-6"></div>
                 <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Foto Profil" class="w-full h-full object-cover rounded-3xl border border-white/10">
-
-                <!-- Floating Purple Glow -->
-                <div class="absolute top-20 right-10 w-20 h-20 bg-purple-accent rounded-full blur-[80px] opacity-60"></div>
+                <div class="absolute top-10 right-10 sm:top-20 sm:right-10 w-16 h-16 sm:w-20 sm:h-20 bg-purple-accent rounded-full blur-[80px] opacity-60"></div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 px-6 bg-white/2">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section id="about" class="py-20 md:py-24 px-4 sm:px-6 bg-white/2">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center">
             <div class="relative" data-animate>
                 <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80" alt="Tentang Saya" class="w-full rounded-2xl shadow-lg border border-white/10">
-                <div class="absolute -bottom-6 -left-6 w-40 h-40 bg-purple-accent/10 rounded-full blur-3xl -z-10"></div>
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 sm:w-40 sm:h-40 bg-purple-accent/10 rounded-full blur-3xl -z-10"></div>
             </div>
             <div data-animate>
                 <span class="text-purple-accent uppercase tracking-widest text-sm font-bold">Siapa Saya</span>
@@ -140,48 +129,43 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto text-center mb-16" data-animate>
+    <section id="services" class="py-20 md:py-24 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto text-center mb-12 sm:mb-16" data-animate>
             <span class="text-purple-accent uppercase tracking-widest text-sm font-bold">Apa Yang Saya Lakukan</span>
-            <h2 class="text-3xl md:text-4xl font-bold mt-4 max-w-2xl mx-auto">Menciptakan Desain Profesional yang Berorientasi pada Kebutuhan Klien</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mt-4 max-w-2xl mx-auto">Menciptakan Desain Profesional untuk Klien</h2>
             <div class="w-24 h-1 bg-purple-accent mx-auto mt-6"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <div data-service-card class="bg-dark-surface p-10 rounded-2xl border border-white/5 hover:border-purple-accent/30 transition-all group" data-animate>
-                <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-8 group-hover:bg-purple-accent/20 transition-all">
-                    <i data-lucide="layout" class="text-gray-400 group-hover:text-purple-accent"></i>
+                <div data-service-card class="hidden md:block bg-dark-surface p-8 sm:p-10 rounded-2xl border border-white/5 hover:border-purple-accent/30 transition-all group" data-animate>
+                    <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-8 group-hover:bg-purple-accent/20 transition-all">
+                        <i data-lucide="layout" class="text-gray-400 group-hover:text-purple-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Desain Produk</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Membangun konsep visual produk dari ide hingga prototipe yang matang.</p>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Desain Produk</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">Membangun konsep visual produk dari ide hingga prototipe yang matang.</p>
-            </div>
-            <!-- Card 2 (Active) -->
-            <div data-service-card class="bg-dark-surface p-10 rounded-2xl border-2 border-purple-accent card-shadow relative overflow-hidden group" data-animate>
-                <div class="w-16 h-16 bg-purple-accent rounded-xl flex items-center justify-center mb-8">
-                    <i data-lucide="smartphone" class="text-white"></i>
+                <div data-service-card class="bg-dark-surface p-8 sm:p-10 rounded-2xl border-2 border-purple-accent card-shadow relative overflow-hidden group" data-animate>
+                    <div class="w-16 h-16 bg-purple-accent rounded-xl flex items-center justify-center mb-8">
+                        <i data-lucide="smartphone" class="text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Desain Aplikasi Mobile</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Fokus pada desain aplikasi mobile yang intuitif dan mudah digunakan di Android & iOS.</p>
+                    <div class="absolute -right-4 -bottom-4 opacity-10">
+                        <i data-lucide="smartphone" class="w-32 h-32"></i>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold mb-4">Desain Aplikasi Mobile</h3>
-                <p class="text-gray-300 text-sm leading-relaxed">Fokus pada desain aplikasi mobile yang intuitif dan mudah digunakan di Android & iOS.</p>
-                <div class="absolute -right-4 -bottom-4 opacity-10">
-                    <i data-lucide="smartphone" class="w-32 h-32"></i>
+                <div data-service-card class="hidden md:block bg-dark-surface p-8 sm:p-10 rounded-2xl border border-white/5 hover:border-purple-accent/30 transition-all group" data-animate>
+                    <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-8 group-hover:bg-purple-accent/20 transition-all">
+                        <i data-lucide="monitor" class="text-gray-400 group-hover:text-purple-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Desain Web</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Pembuatan desain website yang responsif dengan estetika visual modern.</p>
                 </div>
-            </div>
-            <!-- Card 3 -->
-            <div data-service-card class="bg-dark-surface p-10 rounded-2xl border border-white/5 hover:border-purple-accent/30 transition-all group" data-animate>
-                <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-8 group-hover:bg-purple-accent/20 transition-all">
-                    <i data-lucide="monitor" class="text-gray-400 group-hover:text-purple-accent"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Desain Web</h3>
-                <p class="text-gray-500 text-sm leading-relaxed">Pembuatan desain website yang responsif dengan estetika visual modern.</p>
-            </div>
             </div>
         </div>
 
-        <!-- Carousel Controls (Mobile Only) -->
-        <div class="flex md:hidden justify-center mt-12 space-x-4 items-center">
+        <div data-service-controls class="flex md:hidden justify-center mt-12 space-x-4 items-center">
             <button data-service-prev class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/5 transition-all"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
             <div class="flex space-x-2">
                 <div data-service-indicator class="w-3 h-1.5 rounded-full bg-white/20 transition-all"></div>
@@ -192,94 +176,84 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="py-16 px-6 max-w-7xl mx-auto">
+    <section class="py-12 md:py-16 px-4 sm:px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-dark-surface border border-white/5 p-8 rounded-xl text-center" data-animate>
-                <div class="text-4xl font-bold mb-2">05</div>
+            <div class="bg-dark-surface border border-white/5 p-6 sm:p-8 rounded-xl text-center" data-animate>
+                <div class="text-3xl sm:text-4xl font-bold mb-2">05</div>
                 <div class="text-xs uppercase text-gray-500 font-bold tracking-widest">Klien Global</div>
             </div>
-            <div class="bg-purple-accent p-8 rounded-xl text-center card-shadow" data-animate>
-                <div class="text-4xl font-bold mb-2">03</div>
+            <div class="bg-purple-accent p-6 sm:p-8 rounded-xl text-center card-shadow" data-animate>
+                <div class="text-3xl sm:text-4xl font-bold mb-2">03</div>
                 <div class="text-xs uppercase text-white/80 font-bold tracking-widest">Proyek Selesai</div>
             </div>
-            <div class="bg-dark-surface border border-white/5 p-8 rounded-xl text-center" data-animate>
-                <div class="text-4xl font-bold mb-2">4.5</div>
+            <div class="bg-dark-surface border border-white/5 p-6 sm:p-8 rounded-xl text-center" data-animate>
+                <div class="text-3xl sm:text-4xl font-bold mb-2">4.5</div>
                 <div class="text-xs uppercase text-gray-500 font-bold tracking-widest">Rata-rata Rating</div>
             </div>
-            <div class="bg-dark-surface border border-white/5 p-8 rounded-xl text-center" data-animate>
-                <div class="text-4xl font-bold mb-2">06</div>
+            <div class="bg-dark-surface border border-white/5 p-6 sm:p-8 rounded-xl text-center" data-animate>
+                <div class="text-3xl sm:text-4xl font-bold mb-2">06</div>
                 <div class="text-xs uppercase text-gray-500 font-bold tracking-widest">Bulan Pengalaman</div>
             </div>
         </div>
     </section>
 
-    <!-- Project Section -->
-    <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-6 mb-12" data-animate>
+    <section id="projects" class="py-20 md:py-24 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-6 mb-12" data-animate>
             <div>
                 <span class="text-purple-accent font-bold text-sm tracking-widest uppercase">Portofolio</span>
-                <h2 class="text-4xl font-bold mt-2">Proyek Terbaru</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Proyek Terbaru</h2>
             </div>
-            <div class="hidden md:block">
-                <a href="#" class="text-gray-400 hover:text-white flex items-center">Jelajahi Semua <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i></a>
-            </div>
+            <a href="#" class="text-gray-400 hover:text-white flex items-center flex-shrink-0">Jelajahi Semua <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i></a>
         </div>
 
-        <div class="space-y-6 px-4">
-            <!-- Project 1 -->
-            <div class="bg-dark-surface p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
-                <img src="https://images.unsplash.com/photo-1593642702821-c8626c19f865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Daur Ulang App" class="w-full md:w-80 h-48 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
-                <div class="flex-1">
-                    <h3 class="text-2xl font-bold mb-3"><span class="text-emerald-400">Daur</span> Ulang Mobile Apps</h3>
+        <div class="space-y-6">
+            <div class="bg-dark-surface p-4 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
+                <img src="https://images.unsplash.com/photo-1593642702821-c8626c19f865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Daur Ulang App" class="w-full h-48 sm:h-56 md:w-80 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
+                <div class="flex-1 w-full">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3"><span class="text-emerald-400">Daur</span> Ulang Apps</h3>
                     <p class="text-gray-500 text-sm max-w-xl mb-6">Aplikasi pengelolaan limbah rumah tangga untuk mendukung gaya hidup zero waste secara berkelanjutan.</p>
                 </div>
                 <button class="w-full md:w-auto px-8 py-3 bg-purple-accent rounded-lg font-semibold whitespace-nowrap flex-shrink-0 hover:bg-purple-700 transition-all">Lihat Studi</button>
             </div>
 
-            <!-- Project 2 -->
-            <div class="bg-dark-surface p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
-                 <img src="https://images.unsplash.com/photo-1629904853716-f0bc64219b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Ada Mekanik App" class="w-full md:w-80 h-48 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
-                <div class="flex-1">
-                    <h3 class="text-2xl font-bold mb-3">Ada Mekanik Mobile Apps</h3>
+            <div class="bg-dark-surface p-4 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
+                 <img src="https://images.unsplash.com/photo-1629904853716-f0bc64219b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Ada Mekanik App" class="w-full h-48 sm:h-56 md:w-80 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
+                <div class="flex-1 w-full">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3">Ada Mekanik Apps</h3>
                     <p class="text-gray-500 text-sm max-w-xl mb-6">Layanan mekanik panggilan yang efisien untuk kendaraan bermotor di area perkotaan.</p>
                 </div>
                 <button class="w-full md:w-auto px-8 py-3 bg-purple-accent rounded-lg font-semibold whitespace-nowrap flex-shrink-0 hover:bg-purple-700 transition-all">Lihat Studi</button>
             </div>
 
-             <!-- Project 3 -->
-             <div class="bg-dark-surface p-6 rounded-2xl flex flex-col md:flex-row items-center gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
-                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80" alt="InDorm App" class="w-full md:w-80 h-48 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
-                <div class="flex-1">
-                    <h3 class="text-2xl font-bold mb-3">InDorm Mobile Apps</h3>
+             <div class="bg-dark-surface p-4 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80" alt="InDorm App" class="w-full h-48 sm:h-56 md:w-80 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
+                <div class="flex-1 w-full">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3">InDorm Apps</h3>
                     <p class="text-gray-500 text-sm max-w-xl mb-6">Aplikasi pencarian hunian sementara atau kost yang aman dan terpercaya bagi mahasiswa.</p>
                 </div>
                 <button class="w-full md:w-auto px-8 py-3 bg-purple-accent rounded-lg font-semibold whitespace-nowrap flex-shrink-0 hover:bg-purple-700 transition-all">Lihat Studi</button>
             </div>
         </div>
 
-        <!-- Banner CTA -->
-        <div class="mt-20 mx-4 p-10 bg-gradient-to-r from-purple-accent/10 to-transparent border border-purple-accent/20 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-6" data-animate>
-            <div>
-                <h3 class="text-2xl font-bold mb-2">Punya rencana proyek?</h3>
+        <div class="mt-16 sm:mt-20 p-6 sm:p-10 bg-gradient-to-r from-purple-accent/10 to-transparent border border-purple-accent/20 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-6" data-animate>
+            <div class="text-center md:text-left">
+                <h3 class="text-xl sm:text-2xl font-bold mb-2">Punya rencana proyek?</h3>
                 <p class="text-gray-400">Mari diskusikan ide Anda dan wujudkan menjadi produk digital yang luar biasa.</p>
             </div>
             <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 w-full sm:w-auto">
-                <a href="#contact" class="text-sm font-bold border-b border-white/20 pb-1 hover:border-purple-accent transition-colors whitespace-nowrap">Hubungi Saya Lagi</a>
-                <button class="w-full sm:w-auto px-8 py-3 bg-purple-accent rounded-xl font-bold hover:bg-purple-700 transition-all">HUBUNGI SAYA</button>
+                <button class="w-full sm:w-auto px-8 py-3 bg-purple-accent rounded-xl font-bold hover:bg-purple-700 transition-all flex-shrink-0">HUBUNGI SAYA</button>
             </div>
         </div>
     </section>
 
-    <!-- Why Hire Me -->
-    <section class="py-24 px-6 bg-white/[0.01]">
-        <div class="max-w-7xl mx-auto text-center mb-16 relative" data-animate>
-            <h2 class="text-8xl md:text-[150px] font-black absolute inset-0 opacity-[0.03] pointer-events-none uppercase -translate-y-12">Kenapa Saya</h2>
+    <section class="py-20 md:py-24 px-4 sm:px-6 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto text-center mb-12 sm:mb-16 relative" data-animate>
+            <h2 class="text-6xl sm:text-8xl md:text-[150px] font-black absolute inset-0 opacity-[0.03] pointer-events-none uppercase -translate-y-6 sm:-translate-y-12">Kenapa Saya</h2>
             <span class="text-purple-accent font-bold tracking-widest text-sm uppercase">Keunggulan</span>
             <h3 class="text-3xl font-bold mt-2">Mengapa Memilih Saya</h3>
         </div>
 
-        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 px-4">
+        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-8">
             <div class="text-center group" data-animate>
                 <div class="w-20 h-20 bg-dark-surface rounded-full flex items-center justify-center mx-auto mb-6 border border-white/5 group-hover:bg-purple-accent transition-all group-hover:glow-purple">
                     <i data-lucide="briefcase" class="text-purple-accent group-hover:text-white"></i>
@@ -311,77 +285,69 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16" data-animate>
+    <section class="py-20 md:py-24 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-12 sm:mb-16" data-animate>
             <span class="text-purple-accent font-bold tracking-widest text-sm uppercase">Testimoni</span>
-            <h3 class="text-3xl font-bold mt-2">Apa Kata Mereka Tentang Saya</h3>
+            <h3 class="text-3xl font-bold mt-2">Apa Kata Mereka</h3>
         </div>
 
-        <div class="bg-dark-surface p-8 md:p-12 rounded-3xl relative overflow-hidden border border-white/5" data-animate>
-             <!-- Decorative elements -->
+        <div class="bg-dark-surface p-6 sm:p-8 md:p-12 rounded-3xl relative overflow-hidden border border-white/5" data-animate>
             <div class="absolute top-0 left-0 w-32 h-32 bg-purple-accent/5 rounded-full blur-3xl"></div>
             
-            <!-- Testimonial Item 1 -->
-            <div data-testimonial-item class="flex-col md:flex-row items-center gap-12 relative z-10 transition-opacity duration-300">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 1" class="w-48 h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
-                <div>
-                    <i data-lucide="quote" class="text-purple-accent w-10 h-10 mb-6 opacity-50"></i>
-                    <p class="text-gray-400 text-lg italic leading-relaxed mb-8">
+            <div data-testimonial-item class="flex flex-col md:flex-row items-center gap-6 md:gap-12 relative z-10 transition-opacity duration-300">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 1" class="w-32 h-40 sm:w-48 sm:h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
+                <div class="text-center md:text-left">
+                    <i data-lucide="quote" class="text-purple-accent w-8 h-8 sm:w-10 sm:h-10 mb-4 sm:mb-6 opacity-50 mx-auto md:mx-0"></i>
+                    <p class="text-gray-400 text-base sm:text-lg italic leading-relaxed mb-6 sm:mb-8">
                         "Beliau adalah desainer yang sangat bertalenta. Dia mampu menerjemahkan kebutuhan bisnis yang kompleks menjadi desain aplikasi yang sangat ramah pengguna. Sangat direkomendasikan!"
                     </p>
                     <div>
-                        <h4 class="text-xl font-bold text-purple-accent">Seseorang</h4>
+                        <h4 class="text-lg sm:text-xl font-bold text-purple-accent">Seseorang</h4>
                         <p class="text-gray-500 text-sm">Product Manager at TechIndo</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Testimonial Item 2 (Hidden by default) -->
-            <div data-testimonial-item class="flex-col md:flex-row items-center gap-12 relative z-10 transition-opacity duration-300" style="opacity: 0; display: none;">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 2" class="w-48 h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
-                <div>
-                    <i data-lucide="quote" class="text-purple-accent w-10 h-10 mb-6 opacity-50"></i>
-                    <p class="text-gray-400 text-lg italic leading-relaxed mb-8">
+            <div data-testimonial-item class="flex-col md:flex-row items-center gap-6 md:gap-12 relative z-10 transition-opacity duration-300" style="opacity: 0; display: none;">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 2" class="w-32 h-40 sm:w-48 sm:h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
+                <div class="text-center md:text-left">
+                    <i data-lucide="quote" class="text-purple-accent w-8 h-8 sm:w-10 sm:h-10 mb-4 sm:mb-6 opacity-50 mx-auto md:mx-0"></i>
+                    <p class="text-gray-400 text-base sm:text-lg italic leading-relaxed mb-6 sm:mb-8">
                         "Profesional dan responsif! Dimas menghasilkan desain yang tidak hanya indah, tetapi juga fungsional dan user-friendly. Highly recommended untuk project apapun!"
                     </p>
                     <div>
-                        <h4 class="text-xl font-bold text-purple-accent">Siti Nurhaliza</h4>
+                        <h4 class="text-lg sm:text-xl font-bold text-purple-accent">Siti Nurhaliza</h4>
                         <p class="text-gray-500 text-sm">CEO at StartupXYZ</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Testimonial Item 3 (Hidden by default) -->
-            <div data-testimonial-item class="flex-col md:flex-row items-center gap-12 relative z-10 transition-opacity duration-300" style="opacity: 0; display: none;">
-                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 3" class="w-48 h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
-                <div>
-                    <i data-lucide="quote" class="text-purple-accent w-10 h-10 mb-6 opacity-50"></i>
-                    <p class="text-gray-400 text-lg italic leading-relaxed mb-8">
+            <div data-testimonial-item class="flex-col md:flex-row items-center gap-6 md:gap-12 relative z-10 transition-opacity duration-300" style="opacity: 0; display: none;">
+                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 3" class="w-32 h-40 sm:w-48 sm:h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
+                <div class="text-center md:text-left">
+                    <i data-lucide="quote" class="text-purple-accent w-8 h-8 sm:w-10 sm:h-10 mb-4 sm:mb-6 opacity-50 mx-auto md:mx-0"></i>
+                    <p class="text-gray-400 text-base sm:text-lg italic leading-relaxed mb-6 sm:mb-8">
                         "Kerjasama dengan Dimas sangat menyenangkan. Dia mendengarkan setiap feedback dan terus improve designnya. Worth every penny!"
                     </p>
                     <div>
-                        <h4 class="text-xl font-bold text-purple-accent">Budi Santoso</h4>
+                        <h4 class="text-lg sm:text-xl font-bold text-purple-accent">Budi Santoso</h4>
                         <p class="text-gray-500 text-sm">Founder at TechBuddy</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Controls -->
-            <button data-testimonial-prev class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-white transition-colors"><i data-lucide="chevron-left"></i></button>
-            <button data-testimonial-next class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-white transition-colors"><i data-lucide="chevron-right"></i></button>
+            <button data-testimonial-prev class="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-white transition-colors"><i data-lucide="chevron-left"></i></button>
+            <button data-testimonial-next class="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-white transition-colors"><i data-lucide="chevron-right"></i></button>
         </div>
     </section>
 
-    <!-- Tools & Skills -->
-    <section class="py-24 px-6 bg-white/[0.01]">
-        <div class="max-w-7xl mx-auto text-center mb-16 relative" data-animate>
-            <h2 class="text-8xl md:text-[150px] font-black absolute inset-0 opacity-[0.03] pointer-events-none uppercase -translate-y-12">Keahlian</h2>
+    <section class="py-20 md:py-24 px-4 sm:px-6 bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto text-center mb-12 sm:mb-16 relative" data-animate>
+            <h2 class="text-6xl sm:text-8xl md:text-[150px] font-black absolute inset-0 opacity-[0.03] pointer-events-none uppercase -translate-y-6 sm:-translate-y-12">Keahlian</h2>
             <h3 class="text-3xl font-bold mt-2">Peralatan dan Keahlian</h3>
         </div>
         
-        <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-10 opacity-50 grayscale hover:grayscale-0 transition-all px-4" data-animate>
-            <!-- Icon placeholders (Simulasi Logo) -->
+        <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-6 sm:gap-10 opacity-50 grayscale hover:grayscale-0 transition-all" data-animate>
             <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 border border-white/5 transition-all">
                 <span class="font-black text-blue-400">Ps</span>
             </div>
@@ -400,12 +366,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+    <footer id="contact" class="py-16 md:py-20 px-4 sm:px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16">
             <div data-animate>
-                <h3 class="text-3xl font-bold mb-8">Hubungi Saya</h3>
-                <p class="text-gray-500 mb-10 max-w-sm">Hubungi saya untuk kolaborasi atau sharing. Saya selalu terbuka untuk ide-ide baru.</p>
+                <h3 class="text-3xl font-bold mb-6">Hubungi Saya</h3>
+                <p class="text-gray-500 mb-8 max-w-sm">Hubungi saya untuk kolaborasi atau sharing. Saya selalu terbuka untuk ide-ide baru.</p>
                 
                 <div class="space-y-6">
                     <div class="flex items-center space-x-4">
@@ -423,7 +388,7 @@
                         </div>
                         <div>
                             <p class="text-xs text-gray-500 uppercase font-bold tracking-widest">Lokasi</p>
-                            <p class="font-bold">Malang, Indonesia (Tersedia Remote)</p>
+                            <p class="font-bold">Malang, Indonesia (Remote)</p>
                         </div>
                     </div>
                 </div>
@@ -444,8 +409,8 @@
             </div>
         </div>
         
-        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-gray-500 text-sm">
-            <p>© 2026 RFXCreative. Hak Cipta Dilindungi.</p>
+        <div class="max-w-7xl mx-auto mt-16 sm:mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-gray-500 text-sm">
+            <p class="text-center md:text-left">© 2026 RFXCreative. Hak Cipta Dilindungi.</p>
             <div class="flex space-x-8">
                 <a href="#" class="hover:text-purple-accent transition-colors">Kebijakan Privasi</a>
                 <a href="#" class="hover:text-purple-accent transition-colors">Ketentuan Layanan</a>
@@ -453,7 +418,6 @@
         </div>
     </footer>
 
-    <!-- Load Main JavaScript -->
     <script src="js/main.js"></script>
 </body>
 </html>

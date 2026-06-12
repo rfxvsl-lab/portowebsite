@@ -1,5 +1,4 @@
-
- function initMobileMenu() {
+function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const menuIcon = document.getElementById('menuIcon');
@@ -7,7 +6,6 @@
 
     if (!mobileMenuBtn) return;
 
-    // Toggle menu on button click
     mobileMenuBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         mobileMenu.classList.toggle('hidden');
@@ -15,62 +13,35 @@
         closeIcon.classList.toggle('hidden');
     });
 
-    // Close menu when a link is clicked
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
+    mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
             menuIcon.classList.remove('hidden');
             closeIcon.classList.add('hidden');
         });
     });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-            if (!mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-            }
-        }
-    });
-
-    // Close menu on scroll
-    window.addEventListener('scroll', () => {
-        if (!mobileMenu.classList.contains('hidden')) {
-            mobileMenu.classList.add('hidden');
-            menuIcon.classList.remove('hidden');
-            closeIcon.classList.add('hidden');
-        }
-    });
 }
 
-// ===================================
-// 2. SERVICE CAROUSEL
-// ===================================
 function initServiceCarousel() {
-    const serviceCards = document.querySelectorAll('[data-service-card]');
-    if (serviceCards.length === 0) return;
+    const serviceCards = Array.from(document.querySelectorAll('[data-service-card]'));
+    const controls = document.querySelector('[data-service-controls]');
+    if (serviceCards.length === 0 || !controls) return;
 
-    let currentService = 1; // Mobile App Design is default (index 1)
+    let currentService = 0;
 
-    const updateServiceDisplay = () => {
-        serviceCards.forEach((card, index) => {
-            if (window.innerWidth < 768) { // On mobile, show all cards
-                card.classList.remove('hidden');
-                card.classList.add('block');
-                return;
-            }
-            if (index === currentService) {
-                card.classList.remove('hidden');
-                card.classList.add('block');
-            } else {
-                card.classList.add('hidden');
-                card.classList.remove('block');
-            }
-        });
-        updateServiceIndicators();
+    const updateView = () => {
+        if (window.innerWidth >= 768) { // md breakpoint
+            // Show all cards on desktop
+            serviceCards.forEach(card => card.style.display = 'block');
+            controls.style.display = 'none';
+        } else {
+            // Show only current card on mobile
+            serviceCards.forEach((card, index) => {
+                card.style.display = index === currentService ? 'block' : 'none';
+            });
+            controls.style.display = 'flex';
+            updateServiceIndicators();
+        }
     };
 
     const updateServiceIndicators = () => {
@@ -88,35 +59,21 @@ function initServiceCarousel() {
 
     const nextService = () => {
         currentService = (currentService + 1) % serviceCards.length;
-        updateServiceDisplay();
+        updateView();
     };
 
     const prevService = () => {
         currentService = (currentService - 1 + serviceCards.length) % serviceCards.length;
-        updateServiceDisplay();
+        updateView();
     };
 
-    // Attach to buttons
-    const nextBtn = document.querySelector('[data-service-next]');
-    const prevBtn = document.querySelector('[data-service-prev]');
+    document.querySelector('[data-service-next]')?.addEventListener('click', nextService);
+    document.querySelector('[data-service-prev]')?.addEventListener('click', prevService);
 
-    if (nextBtn) nextBtn.addEventListener('click', nextService);
-    if (prevBtn) prevBtn.addEventListener('click', prevService);
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') nextService();
-        if (e.key === 'ArrowLeft') prevService();
-    });
-
-    // Initial display & on resize
-    updateServiceDisplay();
-    window.addEventListener('resize', updateServiceDisplay);
+    window.addEventListener('resize', updateView);
+    updateView(); // Initial call
 }
 
-// ===================================
-// 3. TESTIMONIALS CAROUSEL
-// ===================================
 function initTestimonialCarousel() {
     const testimonialItems = document.querySelectorAll('[data-testimonial-item]');
     if (testimonialItems.length === 0) return;
@@ -125,17 +82,8 @@ function initTestimonialCarousel() {
 
     const updateTestimonialDisplay = () => {
         testimonialItems.forEach((item, index) => {
-            if (index === currentTestimonial) {
-                item.style.display = 'flex'; // Changed from 'block' to 'flex'
-                setTimeout(() => {
-                    item.style.opacity = '1';
-                }, 10);
-            } else {
-                item.style.opacity = '0';
-                setTimeout(() => {
-                    item.style.display = 'none';
-                }, 300);
-            }
+            item.style.display = index === currentTestimonial ? 'flex' : 'none';
+            item.style.opacity = index === currentTestimonial ? '1' : '0';
         });
     };
 
@@ -149,23 +97,13 @@ function initTestimonialCarousel() {
         updateTestimonialDisplay();
     };
 
-    // Attach to buttons
-    const nextBtn = document.querySelector('[data-testimonial-next]');
-    const prevBtn = document.querySelector('[data-testimonial-prev]');
+    document.querySelector('[data-testimonial-next]')?.addEventListener('click', nextTestimonial);
+    document.querySelector('[data-testimonial-prev]')?.addEventListener('click', prevTestimonial);
 
-    if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
-    if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
-
-    // Auto-advance testimonials every 5 seconds
     setInterval(nextTestimonial, 5000);
-
-    // Initial display
-    updateTestimonialDisplay();
+    updateTestimonialDisplay(); // Initial call
 }
 
-// ===================================
-// 4. SMOOTH SCROLLING
-// ===================================
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -174,13 +112,11 @@ function initSmoothScroll() {
             const target = document.querySelector(targetId);
             
             if (target) {
-                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                const offsetTop = target.offsetTop - 64; // Adjusted for mobile navbar height
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
                 });
-                
-                // Manually update URL hash
                 if (history.pushState) {
                     history.pushState(null, null, targetId);
                 } else {
@@ -191,63 +127,48 @@ function initSmoothScroll() {
     });
 }
 
-// ===================================
-// 5. ACTIVE NAV LINK
-// ===================================
 function initActiveNavLink() {
-    const navLinks = document.querySelectorAll('nav a[href^="#"]:not(.px-6)'); // Exclude buttons
+    const navLinks = document.querySelectorAll('nav a[href^="#"]:not(.px-6)');
     const sections = document.querySelectorAll('section[id]');
     
     window.addEventListener('scroll', () => {
         let current = '';
-        
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (pageYOffset >= sectionTop) {
+            const sectionTop = section.offsetTop - 80;
+            if (window.pageYOffset >= sectionTop) {
                 current = section.getAttribute('id');
             }
         });
 
         navLinks.forEach(link => {
-            link.classList.remove('text-white');
+            link.classList.remove('text-white', 'active-link-style');
             link.classList.add('text-gray-400');
-            link.parentElement.classList.remove('active-link-style');
             
             if (link.getAttribute('href') === `#${current}`) {
                 link.classList.remove('text-gray-400');
-                link.classList.add('text-white');
-                link.parentElement.classList.add('active-link-style');
+                link.classList.add('text-white', 'active-link-style');
             }
         });
     });
 }
 
-
-// ===================================
-// 6. LUCIDE ICONS INITIALIZATION
-// ===================================
 function initIcons() {
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
 }
 
-// ===================================
-// 7. FORM HANDLING
-// ===================================
 function initFormHandling() {
     const contactForm = document.querySelector('form');
     if (!contactForm) return;
 
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
         const nameInput = this.querySelector('input[type="text"]');
         const emailInput = this.querySelector('input[type="email"]');
         const messageInput = this.querySelector('textarea');
         const submitBtn = this.querySelector('button[type="submit"]');
         
-        // Validate
         if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
             submitBtn.textContent = 'Please fill all fields';
             setTimeout(() => {
@@ -256,12 +177,10 @@ function initFormHandling() {
             return;
         }
         
-        // Show success message
         const originalText = submitBtn.textContent;
         submitBtn.textContent = '✓ Message Sent!';
         submitBtn.disabled = true;
         
-        // Reset form
         setTimeout(() => {
             this.reset();
             submitBtn.textContent = originalText;
@@ -270,17 +189,8 @@ function initFormHandling() {
     });
 }
 
-// ===================================
-// 8. SCROLL REVEAL ANIMATIONS
-// ===================================
 function initScrollReveal() {
     const revealElements = document.querySelectorAll('[data-animate]');
-    
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -288,16 +198,11 @@ function initScrollReveal() {
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    revealElements.forEach(el => {
-        observer.observe(el);
-    });
+    revealElements.forEach(el => observer.observe(el));
 }
 
-// ===================================
-// 9. INITIALIZE ALL
-// ===================================
 function initAll() {
     initMobileMenu();
     initServiceCarousel();
@@ -307,20 +212,15 @@ function initAll() {
     initIcons();
     initFormHandling();
     initScrollReveal();
-    
-    console.log('✓ All functions initialized successfully');
+    console.log('✓ All mobile-first functions initialized successfully');
 }
 
-// ===================================
-// 10. RUN ON PAGE LOAD
-// ===================================
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initAll);
 } else {
     initAll();
 }
 
-// Handle dynamic icon updates
 window.addEventListener('load', () => {
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();

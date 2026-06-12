@@ -1,5 +1,5 @@
 /* ========================================
-   IronsCreative Portfolio - Custom Styles
+   IronsCreative Portfolio - Mobile-First Styles
    ======================================== */
 
 :root {
@@ -9,9 +9,6 @@
     --transition: all 0.3s ease-in-out;
 }
 
-/* ========================================
-   Global Styles
-   ======================================== */
 [data-animate] {
     opacity: 0;
     transform: translateY(20px);
@@ -23,29 +20,31 @@
     transform: translateY(0);
 }
 
-/* ========================================
-   Navigation Styles
-   ======================================== */
-nav {
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
 .active-link-style {
-    position: relative;
+    color: white !important;
 }
 
-.active-link-style::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--color-purple);
-    transition: width var(--transition);
+#mobileMenu .active-link-style {
+    background-color: rgba(124, 58, 237, 0.1);
+    border-left: 4px solid var(--color-purple);
+    padding-left: 1rem;
 }
 
-/* Mobile Menu Animation */
+@media (min-width: 768px) {
+    .active-link-style {
+        position: relative;
+    }
+    .active-link-style::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--color-purple);
+    }
+}
+
 #mobileMenu {
     animation: slideDown 0.3s ease-out;
 }
@@ -61,9 +60,6 @@ nav {
     }
 }
 
-/* ========================================
-   Hover Effects
-   ======================================== */
 .group:hover .group-hover\:scale-\[1\.02\] {
     transform: scale(1.02);
 }
@@ -72,9 +68,6 @@ nav {
     filter: grayscale(0);
 }
 
-/* ========================================
-   Button Styles
-   ======================================== */
 button, .button {
     transition: var(--transition);
     cursor: pointer;
@@ -84,25 +77,15 @@ button:active, .button:active {
     transform: scale(0.95);
 }
 
-/* ========================================
-   Focus States for Accessibility
-   ======================================== */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
+a:focus, button:focus, input:focus, textarea:focus {
     outline: 2px solid var(--color-purple);
     outline-offset: 2px;
 }
 
-input:focus,
-textarea:focus {
+input:focus, textarea:focus {
     border-color: var(--color-purple) !important;
 }
 
-/* ========================================
-   Scrollbar Styling (Optional)
-   ======================================== */
 ::-webkit-scrollbar {
     width: 8px;
 }
