@@ -4,48 +4,60 @@ function initMobileMenu() {
     const menuIcon = document.getElementById('menuIcon');
     const closeIcon = document.getElementById('closeIcon');
 
-    if (!mobileMenuBtn) return;
+    if (!mobileMenuBtn || !mobileMenu) return;
 
-    mobileMenuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        mobileMenu.classList.toggle('hidden');
-        menuIcon.classList.toggle('hidden');
-        closeIcon.classList.toggle('hidden');
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
+    const toggleMenu = (forceClose = false) => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (forceClose || !isHidden) {
             mobileMenu.classList.add('hidden');
             menuIcon.classList.remove('hidden');
             closeIcon.classList.add('hidden');
-        });
+        } else {
+            mobileMenu.classList.remove('hidden');
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+        }
+    };
+
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => toggleMenu(true));
     });
 }
 
 function initServiceCarousel() {
     const serviceCards = Array.from(document.querySelectorAll('[data-service-card]'));
     const controls = document.querySelector('[data-service-controls]');
-    if (serviceCards.length === 0 || !controls) return;
+    const indicators = document.querySelectorAll('[data-service-indicator]');
+    if (serviceCards.length === 0) return;
 
-    let currentService = 0;
+    let currentService = 1; // Default to the featured item
 
     const updateView = () => {
-        if (window.innerWidth >= 768) { // md breakpoint
-            // Show all cards on desktop
-            serviceCards.forEach(card => card.style.display = 'block');
-            controls.style.display = 'none';
-        } else {
-            // Show only current card on mobile
-            serviceCards.forEach((card, index) => {
+        const isMobile = window.innerWidth < 768;
+        
+        if (controls) {
+            controls.style.display = isMobile ? 'flex' : 'none';
+        }
+
+        serviceCards.forEach((card, index) => {
+            if (isMobile) {
                 card.style.display = index === currentService ? 'block' : 'none';
-            });
-            controls.style.display = 'flex';
+            } else {
+                card.style.display = 'block'; // Show all on desktop
+            }
+        });
+
+        if (isMobile) {
             updateServiceIndicators();
         }
     };
 
     const updateServiceIndicators = () => {
-        const indicators = document.querySelectorAll('[data-service-indicator]');
         indicators.forEach((indicator, index) => {
             if (index === currentService) {
                 indicator.classList.add('w-8', 'bg-purple-accent');
@@ -71,7 +83,7 @@ function initServiceCarousel() {
     document.querySelector('[data-service-prev]')?.addEventListener('click', prevService);
 
     window.addEventListener('resize', updateView);
-    updateView(); // Initial call
+    updateView();
 }
 
 function initTestimonialCarousel() {
@@ -82,8 +94,13 @@ function initTestimonialCarousel() {
 
     const updateTestimonialDisplay = () => {
         testimonialItems.forEach((item, index) => {
-            item.style.display = index === currentTestimonial ? 'flex' : 'none';
-            item.style.opacity = index === currentTestimonial ? '1' : '0';
+            if (index === currentTestimonial) {
+                item.classList.remove('hidden');
+                setTimeout(() => item.classList.remove('opacity-0'), 50); // Fade in
+            } else {
+                item.classList.add('opacity-0');
+                setTimeout(() => item.classList.add('hidden'), 300); // Hide after fade out
+            }
         });
     };
 
@@ -101,7 +118,7 @@ function initTestimonialCarousel() {
     document.querySelector('[data-testimonial-prev]')?.addEventListener('click', prevTestimonial);
 
     setInterval(nextTestimonial, 5000);
-    updateTestimonialDisplay(); // Initial call
+    updateTestimonialDisplay();
 }
 
 function initSmoothScroll() {
@@ -112,9 +129,9 @@ function initSmoothScroll() {
             const target = document.querySelector(targetId);
             
             if (target) {
-                const offsetTop = target.offsetTop - 64; // Adjusted for mobile navbar height
+                const offset = window.innerWidth < 768 ? 64 : 80; // Mobile vs Desktop navbar height
                 window.scrollTo({
-                    top: offsetTop,
+                    top: target.offsetTop - offset,
                     behavior: 'smooth'
                 });
                 if (history.pushState) {
@@ -128,28 +145,24 @@ function initSmoothScroll() {
 }
 
 function initActiveNavLink() {
-    const navLinks = document.querySelectorAll('nav a[href^="#"]:not(.px-6)');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
     const sections = document.querySelectorAll('section[id]');
     
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 80;
-            if (window.pageYOffset >= sectionTop) {
-                current = section.getAttribute('id');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active-link-style');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active-link-style');
+                    }
+                });
             }
         });
+    }, { rootMargin: '-30% 0px -70% 0px' });
 
-        navLinks.forEach(link => {
-            link.classList.remove('text-white', 'active-link-style');
-            link.classList.add('text-gray-400');
-            
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.remove('text-gray-400');
-                link.classList.add('text-white', 'active-link-style');
-            }
-        });
-    });
+    sections.forEach(section => observer.observe(section));
 }
 
 function initIcons() {
@@ -203,7 +216,7 @@ function initScrollReveal() {
     revealElements.forEach(el => observer.observe(el));
 }
 
-function initAll() {
+document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initServiceCarousel();
     initTestimonialCarousel();
@@ -212,14 +225,8 @@ function initAll() {
     initIcons();
     initFormHandling();
     initScrollReveal();
-    console.log('✓ All mobile-first functions initialized successfully');
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initAll);
-} else {
-    initAll();
-}
+    console.log('✓ All functions initialized successfully');
+});
 
 window.addEventListener('load', () => {
     if (typeof lucide !== 'undefined') {

@@ -3,8 +3,13 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport Meta Tag for Mobile Stability -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="HandheldFriendly" content="true">
+    
     <title>Custom Name - Portofolio UI/UX</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -14,25 +19,15 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0B0B0E;
             color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .bg-dark-surface {
-            background-color: #121217;
-        }
-        .text-purple-accent {
-            color: #7C3AED;
-        }
-        .bg-purple-accent {
-            background-color: #7C3AED;
-        }
-        .border-purple-accent {
-            border-color: #7C3AED;
-        }
-        .card-shadow {
-            box-shadow: 0 10px 30px -15px rgba(124, 58, 237, 0.3);
-        }
-        .glow-purple {
-            filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.5));
-        }
+        .bg-dark-surface { background-color: #121217; }
+        .text-purple-accent { color: #7C3AED; }
+        .bg-purple-accent { background-color: #7C3AED; }
+        .border-purple-accent { border-color: #7C3AED; }
+        .card-shadow { box-shadow: 0 10px 30px -15px rgba(124, 58, 237, 0.3); }
+        .glow-purple { filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.5)); }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -74,299 +69,301 @@
         </div>
     </nav>
 
-    <section id="home" class="pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-20 px-4 sm:px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-        <div data-animate>
-            <h4 class="text-base sm:text-lg font-medium text-gray-300 mb-2">Halo Semua</h4>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
-                Saya <span class="text-purple-accent">Custom Name</span>
-            </h1>
-            <h3 class="text-lg sm:text-xl text-gray-400 font-medium mb-6">Peminat Desain UI/UX</h3>
-            <p class="text-gray-400 sm:text-gray-500 leading-relaxed mb-8 sm:mb-10 max-w-lg">
-                Seorang desainer yang berfokus pada pengalaman pengguna dan antarmuka visual yang modern. Saya senang menciptakan solusi desain yang bersih, fungsional, dan berorientasi pada kebutuhan klien.
-            </p>
-            <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <button class="px-8 py-3 bg-purple-accent rounded-lg font-semibold hover:bg-purple-700 transition-all flex items-center whitespace-nowrap">
-                    Unduh CV <i data-lucide="download" class="ml-2 w-4 h-4"></i>
-                </button>
-                <a href="#contact" class="font-semibold border-b border-white/20 pb-1 hover:border-purple-accent transition-all whitespace-nowrap">Hubungi Saya</a>
-            </div>
-            <div class="mt-10 sm:mt-12 flex items-center space-x-4 flex-wrap">
-                <span class="text-sm text-gray-500 mr-2">Temukan Saya di:</span>
-                <div class="flex space-x-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-accent transition-all"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-accent transition-all"><i data-lucide="twitter" class="w-4 h-4"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-accent transition-all"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-accent transition-all"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="relative flex justify-center md:justify-end" data-animate>
-            <div class="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[500px] z-10">
-                <div class="absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 w-full h-full bg-purple-accent/20 rounded-3xl -z-10 transform rotate-6"></div>
-                <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Foto Profil" class="w-full h-full object-cover rounded-3xl border border-white/10">
-                <div class="absolute top-10 right-10 sm:top-20 sm:right-10 w-16 h-16 sm:w-20 sm:h-20 bg-purple-accent rounded-full blur-[80px] opacity-60"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-20 md:py-24 px-4 sm:px-6 bg-white/2">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center">
-            <div class="relative" data-animate>
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80" alt="Tentang Saya" class="w-full rounded-2xl shadow-lg border border-white/10">
-                <div class="absolute -bottom-6 -left-6 w-32 h-32 sm:w-40 sm:h-40 bg-purple-accent/10 rounded-full blur-3xl -z-10"></div>
-            </div>
+    <main class="px-4 sm:px-6">
+        <section id="home" class="pt-28 sm:pt-32 md:pt-40 pb-16 md:pb-20 max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div data-animate>
-                <span class="text-purple-accent uppercase tracking-widest text-sm font-bold">Siapa Saya</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Tentang Saya</h2>
-                <p class="text-gray-400 leading-relaxed mb-6">
-                    Saya seorang desainer UI/UX dengan hasrat untuk menciptakan pengalaman digital yang intuitif dan menarik. Dengan latar belakang dalam seni rupa dan teknologi, saya membawa perspektif unik untuk setiap proyek.
+                <h4 class="text-base sm:text-lg font-medium text-gray-300 mb-2">Halo Semua</h4>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                    Saya <span class="text-purple-accent">Custom Name</span>
+                </h1>
+                <h3 class="text-lg sm:text-xl text-gray-400 font-medium mb-6">Peminat Desain UI/UX</h3>
+                <p class="text-gray-400 sm:text-gray-500 leading-relaxed mb-8 sm:mb-10 max-w-lg">
+                    Seorang desainer yang berfokus pada pengalaman pengguna dan antarmuka visual yang modern. Saya senang menciptakan solusi desain yang bersih, fungsional, dan berorientasi pada kebutuhan klien.
                 </p>
-                <p class="text-gray-400 leading-relaxed mb-8">
-                    Tujuan saya adalah menjembatani kesenjangan antara kebutuhan pengguna dan tujuan bisnis, menghasilkan produk yang tidak hanya terlihat bagus tetapi juga memberikan nilai nyata.
-                </p>
-                <a href="#projects" class="font-semibold border-b-2 border-purple-accent pb-1 hover:text-purple-accent transition-all">Lihat Proyek Saya</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-20 md:py-24 px-4 sm:px-6">
-        <div class="max-w-7xl mx-auto text-center mb-12 sm:mb-16" data-animate>
-            <span class="text-purple-accent uppercase tracking-widest text-sm font-bold">Apa Yang Saya Lakukan</span>
-            <h2 class="text-3xl md:text-4xl font-bold mt-4 max-w-2xl mx-auto">Menciptakan Desain Profesional untuk Klien</h2>
-            <div class="w-24 h-1 bg-purple-accent mx-auto mt-6"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div data-service-card class="hidden md:block bg-dark-surface p-8 sm:p-10 rounded-2xl border border-white/5 hover:border-purple-accent/30 transition-all group" data-animate>
-                    <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-8 group-hover:bg-purple-accent/20 transition-all">
-                        <i data-lucide="layout" class="text-gray-400 group-hover:text-purple-accent"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Desain Produk</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Membangun konsep visual produk dari ide hingga prototipe yang matang.</p>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <button class="px-8 py-3 bg-purple-accent rounded-lg font-semibold hover:bg-purple-700 transition-all flex items-center whitespace-nowrap">
+                        Unduh CV <i data-lucide="download" class="ml-2 w-4 h-4"></i>
+                    </button>
+                    <a href="#contact" class="font-semibold border-b border-white/20 pb-1 hover:border-purple-accent transition-all whitespace-nowrap">Hubungi Saya</a>
                 </div>
-                <div data-service-card class="bg-dark-surface p-8 sm:p-10 rounded-2xl border-2 border-purple-accent card-shadow relative overflow-hidden group" data-animate>
-                    <div class="w-16 h-16 bg-purple-accent rounded-xl flex items-center justify-center mb-8">
-                        <i data-lucide="smartphone" class="text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Desain Aplikasi Mobile</h3>
-                    <p class="text-gray-300 text-sm leading-relaxed">Fokus pada desain aplikasi mobile yang intuitif dan mudah digunakan di Android & iOS.</p>
-                    <div class="absolute -right-4 -bottom-4 opacity-10">
-                        <i data-lucide="smartphone" class="w-32 h-32"></i>
+                <div class="mt-10 sm:mt-12 flex items-center space-x-4 flex-wrap">
+                    <span class="text-sm text-gray-500 mr-2">Temukan Saya di:</span>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-accent transition-all"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-accent transition-all"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-accent transition-all"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-purple-accent transition-all"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
                     </div>
                 </div>
-                <div data-service-card class="hidden md:block bg-dark-surface p-8 sm:p-10 rounded-2xl border border-white/5 hover:border-purple-accent/30 transition-all group" data-animate>
-                    <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-8 group-hover:bg-purple-accent/20 transition-all">
-                        <i data-lucide="monitor" class="text-gray-400 group-hover:text-purple-accent"></i>
+            </div>
+            <div class="relative flex justify-center md:justify-end" data-animate>
+                <div class="relative w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[500px] z-10">
+                    <div class="absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 w-full h-full bg-purple-accent/20 rounded-3xl -z-10 transform rotate-6"></div>
+                    <img src="https://images.unsplash.com/photo-1531384441138-2736e62e0919?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Foto Profil" class="w-full h-full object-cover rounded-3xl border border-white/10">
+                    <div class="absolute top-10 right-10 sm:top-20 sm:right-10 w-16 h-16 sm:w-20 sm:h-20 bg-purple-accent rounded-full blur-[80px] opacity-60"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 md:py-24 bg-white/2 -mx-4 sm:-mx-6 px-4 sm:px-6">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+                <div class="relative" data-animate>
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80" alt="Tentang Saya" class="w-full rounded-2xl shadow-lg border border-white/10">
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 sm:w-40 sm:h-40 bg-purple-accent/10 rounded-full blur-3xl -z-10"></div>
+                </div>
+                <div data-animate>
+                    <span class="text-purple-accent uppercase tracking-widest text-sm font-bold">Siapa Saya</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">Tentang Saya</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Saya seorang desainer UI/UX dengan hasrat untuk menciptakan pengalaman digital yang intuitif dan menarik. Dengan latar belakang dalam seni rupa dan teknologi, saya membawa perspektif unik untuk setiap proyek.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        Tujuan saya adalah menjembatani kesenjangan antara kebutuhan pengguna dan tujuan bisnis, menghasilkan produk yang tidak hanya terlihat bagus tetapi juga memberikan nilai nyata.
+                    </p>
+                    <a href="#projects" class="font-semibold border-b-2 border-purple-accent pb-1 hover:text-purple-accent transition-all">Lihat Proyek Saya</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 md:py-24">
+            <div class="max-w-7xl mx-auto text-center mb-12 sm:mb-16" data-animate>
+                <span class="text-purple-accent uppercase tracking-widest text-sm font-bold">Apa Yang Saya Lakukan</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-4 max-w-2xl mx-auto">Menciptakan Desain Profesional untuk Klien</h2>
+                <div class="w-24 h-1 bg-purple-accent mx-auto mt-6"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div data-service-card class="bg-dark-surface p-8 sm:p-10 rounded-2xl border border-white/5 hover:border-purple-accent/30 transition-all group" data-animate>
+                        <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-8 group-hover:bg-purple-accent/20 transition-all">
+                            <i data-lucide="layout" class="text-gray-400 group-hover:text-purple-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Desain Produk</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Membangun konsep visual produk dari ide hingga prototipe yang matang.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Desain Web</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Pembuatan desain website yang responsif dengan estetika visual modern.</p>
+                    <div data-service-card class="bg-dark-surface p-8 sm:p-10 rounded-2xl border-2 border-purple-accent card-shadow relative overflow-hidden group" data-animate>
+                        <div class="w-16 h-16 bg-purple-accent rounded-xl flex items-center justify-center mb-8">
+                            <i data-lucide="smartphone" class="text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Desain Aplikasi Mobile</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Fokus pada desain aplikasi mobile yang intuitif dan mudah digunakan di Android & iOS.</p>
+                        <div class="absolute -right-4 -bottom-4 opacity-10">
+                            <i data-lucide="smartphone" class="w-32 h-32"></i>
+                        </div>
+                    </div>
+                    <div data-service-card class="bg-dark-surface p-8 sm:p-10 rounded-2xl border border-white/5 hover:border-purple-accent/30 transition-all group" data-animate>
+                        <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center mb-8 group-hover:bg-purple-accent/20 transition-all">
+                            <i data-lucide="monitor" class="text-gray-400 group-hover:text-purple-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Desain Web</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Pembuatan desain website yang responsif dengan estetika visual modern.</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div data-service-controls class="flex md:hidden justify-center mt-12 space-x-4 items-center">
-            <button data-service-prev class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/5 transition-all"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
-            <div class="flex space-x-2">
-                <div data-service-indicator class="w-3 h-1.5 rounded-full bg-white/20 transition-all"></div>
-                <div data-service-indicator class="w-8 h-1.5 rounded-full bg-purple-accent transition-all"></div>
-                <div data-service-indicator class="w-3 h-1.5 rounded-full bg-white/20 transition-all"></div>
-            </div>
-            <button data-service-next class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/5 transition-all"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
-        </div>
-    </section>
-
-    <section class="py-12 md:py-16 px-4 sm:px-6 max-w-7xl mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-dark-surface border border-white/5 p-6 sm:p-8 rounded-xl text-center" data-animate>
-                <div class="text-3xl sm:text-4xl font-bold mb-2">05</div>
-                <div class="text-xs uppercase text-gray-500 font-bold tracking-widest">Klien Global</div>
-            </div>
-            <div class="bg-purple-accent p-6 sm:p-8 rounded-xl text-center card-shadow" data-animate>
-                <div class="text-3xl sm:text-4xl font-bold mb-2">03</div>
-                <div class="text-xs uppercase text-white/80 font-bold tracking-widest">Proyek Selesai</div>
-            </div>
-            <div class="bg-dark-surface border border-white/5 p-6 sm:p-8 rounded-xl text-center" data-animate>
-                <div class="text-3xl sm:text-4xl font-bold mb-2">4.5</div>
-                <div class="text-xs uppercase text-gray-500 font-bold tracking-widest">Rata-rata Rating</div>
-            </div>
-            <div class="bg-dark-surface border border-white/5 p-6 sm:p-8 rounded-xl text-center" data-animate>
-                <div class="text-3xl sm:text-4xl font-bold mb-2">06</div>
-                <div class="text-xs uppercase text-gray-500 font-bold tracking-widest">Bulan Pengalaman</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-20 md:py-24 px-4 sm:px-6 max-w-7xl mx-auto">
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-6 mb-12" data-animate>
-            <div>
-                <span class="text-purple-accent font-bold text-sm tracking-widest uppercase">Portofolio</span>
-                <h2 class="text-3xl md:text-4xl font-bold mt-2">Proyek Terbaru</h2>
-            </div>
-            <a href="#" class="text-gray-400 hover:text-white flex items-center flex-shrink-0">Jelajahi Semua <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i></a>
-        </div>
-
-        <div class="space-y-6">
-            <div class="bg-dark-surface p-4 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
-                <img src="https://images.unsplash.com/photo-1593642702821-c8626c19f865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Daur Ulang App" class="w-full h-48 sm:h-56 md:w-80 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
-                <div class="flex-1 w-full">
-                    <h3 class="text-xl sm:text-2xl font-bold mb-3"><span class="text-emerald-400">Daur</span> Ulang Apps</h3>
-                    <p class="text-gray-500 text-sm max-w-xl mb-6">Aplikasi pengelolaan limbah rumah tangga untuk mendukung gaya hidup zero waste secara berkelanjutan.</p>
+            <div data-service-controls class="flex md:hidden justify-center mt-12 space-x-4 items-center">
+                <button data-service-prev class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/5 transition-all"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
+                <div class="flex space-x-2">
+                    <div data-service-indicator class="w-3 h-1.5 rounded-full bg-white/20 transition-all"></div>
+                    <div data-service-indicator class="w-3 h-1.5 rounded-full bg-white/20 transition-all"></div>
+                    <div data-service-indicator class="w-3 h-1.5 rounded-full bg-white/20 transition-all"></div>
                 </div>
-                <button class="w-full md:w-auto px-8 py-3 bg-purple-accent rounded-lg font-semibold whitespace-nowrap flex-shrink-0 hover:bg-purple-700 transition-all">Lihat Studi</button>
+                <button data-service-next class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-white/5 transition-all"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
             </div>
+        </section>
 
-            <div class="bg-dark-surface p-4 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
-                 <img src="https://images.unsplash.com/photo-1629904853716-f0bc64219b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Ada Mekanik App" class="w-full h-48 sm:h-56 md:w-80 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
-                <div class="flex-1 w-full">
-                    <h3 class="text-xl sm:text-2xl font-bold mb-3">Ada Mekanik Apps</h3>
-                    <p class="text-gray-500 text-sm max-w-xl mb-6">Layanan mekanik panggilan yang efisien untuk kendaraan bermotor di area perkotaan.</p>
+        <section class="py-12 md:py-16 max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-dark-surface border border-white/5 p-6 sm:p-8 rounded-xl text-center" data-animate>
+                    <div class="text-3xl sm:text-4xl font-bold mb-2">05</div>
+                    <div class="text-xs uppercase text-gray-500 font-bold tracking-widest">Klien Global</div>
                 </div>
-                <button class="w-full md:w-auto px-8 py-3 bg-purple-accent rounded-lg font-semibold whitespace-nowrap flex-shrink-0 hover:bg-purple-700 transition-all">Lihat Studi</button>
-            </div>
-
-             <div class="bg-dark-surface p-4 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
-                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80" alt="InDorm App" class="w-full h-48 sm:h-56 md:w-80 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
-                <div class="flex-1 w-full">
-                    <h3 class="text-xl sm:text-2xl font-bold mb-3">InDorm Apps</h3>
-                    <p class="text-gray-500 text-sm max-w-xl mb-6">Aplikasi pencarian hunian sementara atau kost yang aman dan terpercaya bagi mahasiswa.</p>
+                <div class="bg-purple-accent p-6 sm:p-8 rounded-xl text-center card-shadow" data-animate>
+                    <div class="text-3xl sm:text-4xl font-bold mb-2">03</div>
+                    <div class="text-xs uppercase text-white/80 font-bold tracking-widest">Proyek Selesai</div>
                 </div>
-                <button class="w-full md:w-auto px-8 py-3 bg-purple-accent rounded-lg font-semibold whitespace-nowrap flex-shrink-0 hover:bg-purple-700 transition-all">Lihat Studi</button>
-            </div>
-        </div>
-
-        <div class="mt-16 sm:mt-20 p-6 sm:p-10 bg-gradient-to-r from-purple-accent/10 to-transparent border border-purple-accent/20 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-6" data-animate>
-            <div class="text-center md:text-left">
-                <h3 class="text-xl sm:text-2xl font-bold mb-2">Punya rencana proyek?</h3>
-                <p class="text-gray-400">Mari diskusikan ide Anda dan wujudkan menjadi produk digital yang luar biasa.</p>
-            </div>
-            <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 w-full sm:w-auto">
-                <button class="w-full sm:w-auto px-8 py-3 bg-purple-accent rounded-xl font-bold hover:bg-purple-700 transition-all flex-shrink-0">HUBUNGI SAYA</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 md:py-24 px-4 sm:px-6 bg-white/[0.01]">
-        <div class="max-w-7xl mx-auto text-center mb-12 sm:mb-16 relative" data-animate>
-            <h2 class="text-6xl sm:text-8xl md:text-[150px] font-black absolute inset-0 opacity-[0.03] pointer-events-none uppercase -translate-y-6 sm:-translate-y-12">Kenapa Saya</h2>
-            <span class="text-purple-accent font-bold tracking-widest text-sm uppercase">Keunggulan</span>
-            <h3 class="text-3xl font-bold mt-2">Mengapa Memilih Saya</h3>
-        </div>
-
-        <div class="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="text-center group" data-animate>
-                <div class="w-20 h-20 bg-dark-surface rounded-full flex items-center justify-center mx-auto mb-6 border border-white/5 group-hover:bg-purple-accent transition-all group-hover:glow-purple">
-                    <i data-lucide="briefcase" class="text-purple-accent group-hover:text-white"></i>
+                <div class="bg-dark-surface border border-white/5 p-6 sm:p-8 rounded-xl text-center" data-animate>
+                    <div class="text-3xl sm:text-4xl font-bold mb-2">4.5</div>
+                    <div class="text-xs uppercase text-gray-500 font-bold tracking-widest">Rata-rata Rating</div>
                 </div>
-                <h4 class="font-bold mb-3">Pekerja Keras</h4>
-                <p class="text-gray-500 text-xs px-4">Berdedikasi tinggi untuk menyelesaikan setiap tantangan tepat waktu.</p>
-            </div>
-            <div class="text-center group" data-animate>
-                <div class="w-20 h-20 bg-dark-surface rounded-full flex items-center justify-center mx-auto mb-6 border border-white/5 group-hover:bg-purple-accent transition-all group-hover:glow-purple">
-                    <i data-lucide="message-circle" class="text-purple-accent group-hover:text-white"></i>
+                <div class="bg-dark-surface border border-white/5 p-6 sm:p-8 rounded-xl text-center" data-animate>
+                    <div class="text-3xl sm:text-4xl font-bold mb-2">06</div>
+                    <div class="text-xs uppercase text-gray-500 font-bold tracking-widest">Bulan Pengalaman</div>
                 </div>
-                <h4 class="font-bold mb-3">Komunikasi</h4>
-                <p class="text-gray-500 text-xs px-4">Terbuka dan komunikatif untuk hasil yang sesuai ekspektasi.</p>
             </div>
-            <div class="text-center group" data-animate>
-                <div class="w-20 h-20 bg-dark-surface rounded-full flex items-center justify-center mx-auto mb-6 border border-white/5 group-hover:bg-purple-accent transition-all group-hover:glow-purple">
-                    <i data-lucide="users" class="text-purple-accent group-hover:text-white"></i>
-                </div>
-                <h4 class="font-bold mb-3">Kooperatif</h4>
-                <p class="text-gray-500 text-xs px-4">Mampu bekerja sama dalam tim lintas divisi dengan baik.</p>
-            </div>
-            <div class="text-center group" data-animate>
-                <div class="w-20 h-20 bg-dark-surface rounded-full flex items-center justify-center mx-auto mb-6 border border-white/5 group-hover:bg-purple-accent transition-all group-hover:glow-purple">
-                    <i data-lucide="shield-check" class="text-purple-accent group-hover:text-white"></i>
-                </div>
-                <h4 class="font-bold mb-3">Perfeksionis</h4>
-                <p class="text-gray-500 text-xs px-4">Memperhatikan setiap piksel untuk kualitas terbaik.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-20 md:py-24 px-4 sm:px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-12 sm:mb-16" data-animate>
-            <span class="text-purple-accent font-bold tracking-widest text-sm uppercase">Testimoni</span>
-            <h3 class="text-3xl font-bold mt-2">Apa Kata Mereka</h3>
-        </div>
+        <section id="projects" class="py-20 md:py-24 max-w-7xl mx-auto">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-6 mb-12" data-animate>
+                <div>
+                    <span class="text-purple-accent font-bold text-sm tracking-widest uppercase">Portofolio</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2">Proyek Terbaru</h2>
+                </div>
+                <a href="#" class="text-gray-400 hover:text-white flex items-center flex-shrink-0">Jelajahi Semua <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i></a>
+            </div>
 
-        <div class="bg-dark-surface p-6 sm:p-8 md:p-12 rounded-3xl relative overflow-hidden border border-white/5" data-animate>
-            <div class="absolute top-0 left-0 w-32 h-32 bg-purple-accent/5 rounded-full blur-3xl"></div>
+            <div class="space-y-6">
+                <div class="bg-dark-surface p-4 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
+                    <img src="https://images.unsplash.com/photo-1593642702821-c8626c19f865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Daur Ulang App" class="w-full h-48 sm:h-56 md:w-80 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
+                    <div class="flex-1 w-full">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-3"><span class="text-emerald-400">Daur</span> Ulang Apps</h3>
+                        <p class="text-gray-500 text-sm max-w-xl mb-6">Aplikasi pengelolaan limbah rumah tangga untuk mendukung gaya hidup zero waste secara berkelanjutan.</p>
+                    </div>
+                    <button class="w-full md:w-auto px-8 py-3 bg-purple-accent rounded-lg font-semibold whitespace-nowrap flex-shrink-0 hover:bg-purple-700 transition-all">Lihat Studi</button>
+                </div>
+
+                <div class="bg-dark-surface p-4 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
+                     <img src="https://images.unsplash.com/photo-1629904853716-f0bc64219b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Ada Mekanik App" class="w-full h-48 sm:h-56 md:w-80 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
+                    <div class="flex-1 w-full">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-3">Ada Mekanik Apps</h3>
+                        <p class="text-gray-500 text-sm max-w-xl mb-6">Layanan mekanik panggilan yang efisien untuk kendaraan bermotor di area perkotaan.</p>
+                    </div>
+                    <button class="w-full md:w-auto px-8 py-3 bg-purple-accent rounded-lg font-semibold whitespace-nowrap flex-shrink-0 hover:bg-purple-700 transition-all">Lihat Studi</button>
+                </div>
+
+                 <div class="bg-dark-surface p-4 sm:p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 md:gap-8 border border-white/5 hover:border-purple-accent/20 transition-all group" data-animate>
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=958&q=80" alt="InDorm App" class="w-full h-48 sm:h-56 md:w-80 object-cover rounded-xl group-hover:scale-[1.02] transition-transform flex-shrink-0">
+                    <div class="flex-1 w-full">
+                        <h3 class="text-xl sm:text-2xl font-bold mb-3">InDorm Apps</h3>
+                        <p class="text-gray-500 text-sm max-w-xl mb-6">Aplikasi pencarian hunian sementara atau kost yang aman dan terpercaya bagi mahasiswa.</p>
+                    </div>
+                    <button class="w-full md:w-auto px-8 py-3 bg-purple-accent rounded-lg font-semibold whitespace-nowrap flex-shrink-0 hover:bg-purple-700 transition-all">Lihat Studi</button>
+                </div>
+            </div>
+
+            <div class="mt-16 sm:mt-20 p-6 sm:p-10 bg-gradient-to-r from-purple-accent/10 to-transparent border border-purple-accent/20 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-6" data-animate>
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-2">Punya rencana proyek?</h3>
+                    <p class="text-gray-400">Mari diskusikan ide Anda dan wujudkan menjadi produk digital yang luar biasa.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 w-full sm:w-auto">
+                    <button class="w-full sm:w-auto px-8 py-3 bg-purple-accent rounded-xl font-bold hover:bg-purple-700 transition-all flex-shrink-0">HUBUNGI SAYA</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-24 bg-white/[0.01] -mx-4 sm:-mx-6 px-4 sm:px-6">
+            <div class="max-w-7xl mx-auto text-center mb-12 sm:mb-16 relative" data-animate>
+                <h2 class="text-6xl sm:text-8xl md:text-[150px] font-black absolute inset-0 opacity-[0.03] pointer-events-none uppercase -translate-y-6 sm:-translate-y-12">Kenapa Saya</h2>
+                <span class="text-purple-accent font-bold tracking-widest text-sm uppercase">Keunggulan</span>
+                <h3 class="text-3xl font-bold mt-2">Mengapa Memilih Saya</h3>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center group" data-animate>
+                    <div class="w-20 h-20 bg-dark-surface rounded-full flex items-center justify-center mx-auto mb-6 border border-white/5 group-hover:bg-purple-accent transition-all group-hover:glow-purple">
+                        <i data-lucide="briefcase" class="text-purple-accent group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-bold mb-3">Pekerja Keras</h4>
+                    <p class="text-gray-500 text-xs px-4">Berdedikasi tinggi untuk menyelesaikan setiap tantangan tepat waktu.</p>
+                </div>
+                <div class="text-center group" data-animate>
+                    <div class="w-20 h-20 bg-dark-surface rounded-full flex items-center justify-center mx-auto mb-6 border border-white/5 group-hover:bg-purple-accent transition-all group-hover:glow-purple">
+                        <i data-lucide="message-circle" class="text-purple-accent group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-bold mb-3">Komunikasi</h4>
+                    <p class="text-gray-500 text-xs px-4">Terbuka dan komunikatif untuk hasil yang sesuai ekspektasi.</p>
+                </div>
+                <div class="text-center group" data-animate>
+                    <div class="w-20 h-20 bg-dark-surface rounded-full flex items-center justify-center mx-auto mb-6 border border-white/5 group-hover:bg-purple-accent transition-all group-hover:glow-purple">
+                        <i data-lucide="users" class="text-purple-accent group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-bold mb-3">Kooperatif</h4>
+                    <p class="text-gray-500 text-xs px-4">Mampu bekerja sama dalam tim lintas divisi dengan baik.</p>
+                </div>
+                <div class="text-center group" data-animate>
+                    <div class="w-20 h-20 bg-dark-surface rounded-full flex items-center justify-center mx-auto mb-6 border border-white/5 group-hover:bg-purple-accent transition-all group-hover:glow-purple">
+                        <i data-lucide="shield-check" class="text-purple-accent group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-bold mb-3">Perfeksionis</h4>
+                    <p class="text-gray-500 text-xs px-4">Memperhatikan setiap piksel untuk kualitas terbaik.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-24 max-w-7xl mx-auto">
+            <div class="text-center mb-12 sm:mb-16" data-animate>
+                <span class="text-purple-accent font-bold tracking-widest text-sm uppercase">Testimoni</span>
+                <h3 class="text-3xl font-bold mt-2">Apa Kata Mereka</h3>
+            </div>
+
+            <div class="bg-dark-surface p-6 sm:p-8 md:p-12 rounded-3xl relative overflow-hidden border border-white/5" data-animate>
+                <div class="absolute top-0 left-0 w-32 h-32 bg-purple-accent/5 rounded-full blur-3xl"></div>
+                
+                <div data-testimonial-item class="flex flex-col md:flex-row items-center gap-6 md:gap-12 relative z-10 transition-opacity duration-300">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 1" class="w-32 h-40 sm:w-48 sm:h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
+                    <div class="text-center md:text-left">
+                        <i data-lucide="quote" class="text-purple-accent w-8 h-8 sm:w-10 sm:h-10 mb-4 sm:mb-6 opacity-50 mx-auto md:mx-0"></i>
+                        <p class="text-gray-400 text-base sm:text-lg italic leading-relaxed mb-6 sm:mb-8">
+                            "Beliau adalah desainer yang sangat bertalenta. Dia mampu menerjemahkan kebutuhan bisnis yang kompleks menjadi desain aplikasi yang sangat ramah pengguna. Sangat direkomendasikan!"
+                        </p>
+                        <div>
+                            <h4 class="text-lg sm:text-xl font-bold text-purple-accent">Seseorang</h4>
+                            <p class="text-gray-500 text-sm">Product Manager at TechIndo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-testimonial-item class="hidden flex-col md:flex-row items-center gap-6 md:gap-12 relative z-10 transition-opacity duration-300" style="opacity: 0;">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 2" class="w-32 h-40 sm:w-48 sm:h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
+                    <div class="text-center md:text-left">
+                        <i data-lucide="quote" class="text-purple-accent w-8 h-8 sm:w-10 sm:h-10 mb-4 sm:mb-6 opacity-50 mx-auto md:mx-0"></i>
+                        <p class="text-gray-400 text-base sm:text-lg italic leading-relaxed mb-6 sm:mb-8">
+                            "Profesional dan responsif! Dimas menghasilkan desain yang tidak hanya indah, tetapi juga fungsional dan user-friendly. Highly recommended untuk project apapun!"
+                        </p>
+                        <div>
+                            <h4 class="text-lg sm:text-xl font-bold text-purple-accent">Siti Nurhaliza</h4>
+                            <p class="text-gray-500 text-sm">CEO at StartupXYZ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-testimonial-item class="hidden flex-col md:flex-row items-center gap-6 md:gap-12 relative z-10 transition-opacity duration-300" style="opacity: 0;">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 3" class="w-32 h-40 sm:w-48 sm:h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
+                    <div class="text-center md:text-left">
+                        <i data-lucide="quote" class="text-purple-accent w-8 h-8 sm:w-10 sm:h-10 mb-4 sm:mb-6 opacity-50 mx-auto md:mx-0"></i>
+                        <p class="text-gray-400 text-base sm:text-lg italic leading-relaxed mb-6 sm:mb-8">
+                            "Kerjasama dengan Dimas sangat menyenangkan. Dia mendengarkan setiap feedback dan terus improve designnya. Worth every penny!"
+                        </p>
+                        <div>
+                            <h4 class="text-lg sm:text-xl font-bold text-purple-accent">Budi Santoso</h4>
+                            <p class="text-gray-500 text-sm">Founder at TechBuddy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button data-testimonial-prev class="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-white transition-colors"><i data-lucide="chevron-left"></i></button>
+                <button data-testimonial-next class="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-white transition-colors"><i data-lucide="chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-24 bg-white/[0.01] -mx-4 sm:-mx-6 px-4 sm:px-6">
+            <div class="max-w-7xl mx-auto text-center mb-12 sm:mb-16 relative" data-animate>
+                <h2 class="text-6xl sm:text-8xl md:text-[150px] font-black absolute inset-0 opacity-[0.03] pointer-events-none uppercase -translate-y-6 sm:-translate-y-12">Keahlian</h2>
+                <h3 class="text-3xl font-bold mt-2">Peralatan dan Keahlian</h3>
+            </div>
             
-            <div data-testimonial-item class="flex flex-col md:flex-row items-center gap-6 md:gap-12 relative z-10 transition-opacity duration-300">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 1" class="w-32 h-40 sm:w-48 sm:h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
-                <div class="text-center md:text-left">
-                    <i data-lucide="quote" class="text-purple-accent w-8 h-8 sm:w-10 sm:h-10 mb-4 sm:mb-6 opacity-50 mx-auto md:mx-0"></i>
-                    <p class="text-gray-400 text-base sm:text-lg italic leading-relaxed mb-6 sm:mb-8">
-                        "Beliau adalah desainer yang sangat bertalenta. Dia mampu menerjemahkan kebutuhan bisnis yang kompleks menjadi desain aplikasi yang sangat ramah pengguna. Sangat direkomendasikan!"
-                    </p>
-                    <div>
-                        <h4 class="text-lg sm:text-xl font-bold text-purple-accent">Seseorang</h4>
-                        <p class="text-gray-500 text-sm">Product Manager at TechIndo</p>
-                    </div>
+            <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-6 sm:gap-10 opacity-50 grayscale hover:grayscale-0 transition-all" data-animate>
+                <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 border border-white/5 transition-all">
+                    <span class="font-black text-blue-400">Ps</span>
+                </div>
+                <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 border border-white/5 transition-all">
+                    <span class="font-black text-purple-400">Figma</span>
+                </div>
+                <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 border border-white/5 transition-all">
+                    <span class="font-black text-orange-400">H5</span>
+                </div>
+                <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 border border-white/5 transition-all">
+                    <span class="font-black text-blue-500">C3</span>
+                </div>
+                <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 border border-white/5 transition-all">
+                    <span class="font-black text-green-400">JS</span>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div data-testimonial-item class="flex-col md:flex-row items-center gap-6 md:gap-12 relative z-10 transition-opacity duration-300" style="opacity: 0; display: none;">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 2" class="w-32 h-40 sm:w-48 sm:h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
-                <div class="text-center md:text-left">
-                    <i data-lucide="quote" class="text-purple-accent w-8 h-8 sm:w-10 sm:h-10 mb-4 sm:mb-6 opacity-50 mx-auto md:mx-0"></i>
-                    <p class="text-gray-400 text-base sm:text-lg italic leading-relaxed mb-6 sm:mb-8">
-                        "Profesional dan responsif! Dimas menghasilkan desain yang tidak hanya indah, tetapi juga fungsional dan user-friendly. Highly recommended untuk project apapun!"
-                    </p>
-                    <div>
-                        <h4 class="text-lg sm:text-xl font-bold text-purple-accent">Siti Nurhaliza</h4>
-                        <p class="text-gray-500 text-sm">CEO at StartupXYZ</p>
-                    </div>
-                </div>
-            </div>
-
-            <div data-testimonial-item class="flex-col md:flex-row items-center gap-6 md:gap-12 relative z-10 transition-opacity duration-300" style="opacity: 0; display: none;">
-                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="Testimoni 3" class="w-32 h-40 sm:w-48 sm:h-64 object-cover rounded-2xl flex-shrink-0 border border-white/10 grayscale hover:grayscale-0 transition-all">
-                <div class="text-center md:text-left">
-                    <i data-lucide="quote" class="text-purple-accent w-8 h-8 sm:w-10 sm:h-10 mb-4 sm:mb-6 opacity-50 mx-auto md:mx-0"></i>
-                    <p class="text-gray-400 text-base sm:text-lg italic leading-relaxed mb-6 sm:mb-8">
-                        "Kerjasama dengan Dimas sangat menyenangkan. Dia mendengarkan setiap feedback dan terus improve designnya. Worth every penny!"
-                    </p>
-                    <div>
-                        <h4 class="text-lg sm:text-xl font-bold text-purple-accent">Budi Santoso</h4>
-                        <p class="text-gray-500 text-sm">Founder at TechBuddy</p>
-                    </div>
-                </div>
-            </div>
-
-            <button data-testimonial-prev class="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-white transition-colors"><i data-lucide="chevron-left"></i></button>
-            <button data-testimonial-next class="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 text-gray-600 hover:text-white transition-colors"><i data-lucide="chevron-right"></i></button>
-        </div>
-    </section>
-
-    <section class="py-20 md:py-24 px-4 sm:px-6 bg-white/[0.01]">
-        <div class="max-w-7xl mx-auto text-center mb-12 sm:mb-16 relative" data-animate>
-            <h2 class="text-6xl sm:text-8xl md:text-[150px] font-black absolute inset-0 opacity-[0.03] pointer-events-none uppercase -translate-y-6 sm:-translate-y-12">Keahlian</h2>
-            <h3 class="text-3xl font-bold mt-2">Peralatan dan Keahlian</h3>
-        </div>
-        
-        <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-6 sm:gap-10 opacity-50 grayscale hover:grayscale-0 transition-all" data-animate>
-            <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 border border-white/5 transition-all">
-                <span class="font-black text-blue-400">Ps</span>
-            </div>
-            <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 border border-white/5 transition-all">
-                <span class="font-black text-purple-400">Figma</span>
-            </div>
-            <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 border border-white/5 transition-all">
-                <span class="font-black text-orange-400">H5</span>
-            </div>
-            <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 border border-white/5 transition-all">
-                <span class="font-black text-blue-500">C3</span>
-            </div>
-            <div class="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center hover:bg-white/10 border border-white/5 transition-all">
-                <span class="font-black text-green-400">JS</span>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="py-16 md:py-20 px-4 sm:px-6 border-t border-white/5">
+    <footer id="contact" class="py-16 md:py-20 border-t border-white/5 -mx-4 sm:-mx-6 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16">
             <div data-animate>
                 <h3 class="text-3xl font-bold mb-6">Hubungi Saya</h3>
